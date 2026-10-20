@@ -37,7 +37,25 @@ first, then move the sensor.* That logic usually lives in proprietary hardware d
 The agent is not a chatbot on top of a vision result. The visual evidence changes the next
 sensor action — which is the qualifier for the *Agentic Vision* focus path.
 
+## Code repository
+
+Public source, MIT licensed:
+
+**https://github.com/maebahesioru/panelscan-agent**
+
+Every number in this README and in `docs/REPORT.md` is reproducible from that tree:
+the synthetic bench is generated at runtime, the evaluation harness writes
+`results/eval.json`, and the evidence images are committed. `git log` starts at the
+submission commit; there is no hidden branch and no uncommitted work.
+
+Demo video (4:20, unlisted YouTube upload of `docs/demo_video.mp4`):
+**https://www.youtube.com/watch?v=IoTRT7jfG5M**
+
 ## Quick start
+
+Judge-runnable path: the commands below are exactly what `make install`, `make probe`,
+`make test`, `make eval` and `make video` run (see `Makefile`), on CPU only, with no
+credentials and no network model downloads.
 
 ```bash
 uv venv --python 3.14 .venv
@@ -97,11 +115,11 @@ Rebuild it with `make evidence && bash docs/record_terminal.sh && make video`.
 | Requirement | State |
 |---|---|
 | Technical report | `docs/REPORT.md` |
-| Code repository / archive | this tree (archive attached to the Devpost submission) |
+| Code repository | public: https://github.com/maebahesioru/panelscan-agent (MIT) |
 | Pinned deps + build/deploy/test instructions | `requirements.txt`, `Makefile`, `deploy/` |
 | Architecture diagram | `docs/ARCHITECTURE.md` |
 | Working endpoint **or** live demo | local endpoint verified; AWS deployment **prepared but not executed** (see below) |
-| ≤5 min video | `docs/demo_video.mp4` (4:20) — upload to YouTube is the only step left |
+| ≤5 min video | https://www.youtube.com/watch?v=IoTRT7jfG5M (4:20, unlisted); source `docs/demo_video.mp4` |
 | Evaluation with failure cases | `results/EVAL_SUMMARY.md` |
 
 **AWS is not deployed.** The container and task definition are written and the
