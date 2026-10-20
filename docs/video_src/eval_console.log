@@ -1,0 +1,27 @@
+{
+ "normal": {
+  "tp": 79,
+  "fp": 2,
+  "fn": 4,
+  "precision": 0.975,
+  "recall": 0.952,
+  "f1": 0.963
+ },
+ "hard_agentic": {
+  "tp": 81,
+  "fp": 7,
+  "fn": 2,
+  "precision": 0.92,
+  "recall": 0.976,
+  "f1": 0.947
+ },
+ "hard_baseline": {
+  "tp": 41,
+  "fp": 1,
+  "fn": 42,
+  "precision": 0.976,
+  "recall": 0.494,
+  "f1": 0.656
+ }
+}
+wrote /home/maebahesioru/ダウンロード/sushi_money_research/実行/210_hackathons/opencv2026/results/eval.json

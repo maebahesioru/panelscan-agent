@@ -1,0 +1,1 @@
+Failure cases stay in the repo. Synthetic data only. A human decides.

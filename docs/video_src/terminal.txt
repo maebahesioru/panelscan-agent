@@ -1,0 +1,38 @@
+
+### OpenCV build actually in use
+$ .venv/bin/python src/probe.py
+seed=11 gt=['missing_screw'] found=['missing_screw'] steps=1 actions=['accept'] ms=44
+seed=23 gt=['blob'] found=['blob'] steps=2 actions=['refocus', 'accept'] ms=70
+seed=31 gt=['scratch', 'blob'] found=['blob', 'scratch'] steps=2 actions=['refocus', 'accept'] ms=99
+HARD seed=5 gt=['scratch', 'misaligned_label', 'missing_screw'] found=['misaligned_label', 'missing_screw', 'scratch'] actions=['refocus', 'accept']
+
+### tests
+$ .venv/bin/python -m pytest -q
+.....                                                                    [100%]
+5 passed in 1.62s
+
+### evaluation — 40 normal + 40 degraded scenes, one command
+$ .venv/bin/python src/eval_harness.py --scenes 80
+wrote /home/maebahesioru/ダウンロード/sushi_money_research/実行/210_hackathons/opencv2026/results/eval.json
+$ .venv/bin/python docs/show_metrics.py
+generated 2026-10-20T10:51:28+0900  opencv 5.0.0
+  single-shot / degraded   P 0.976  R 0.494  F1 0.656   tp/fp/fn 41/1/42   p50 72.1 ms   steps 1.0
+  agentic loop / degraded  P 0.920  R 0.976  F1 0.947   tp/fp/fn 81/7/2   p50 218.5 ms   steps 2.9
+  agentic loop / normal    P 0.975  R 0.952  F1 0.963   tp/fp/fn 79/2/4   p50 67.5 ms   steps 1.32
+
+### live endpoint — the same loop over HTTP (local, not AWS)
+$ curl -s http://127.0.0.1:8080/healthz
+{"ok":true,"opencv":"5.0.0","numpy":"2.5.4","arch":"x86_64","service":"panelscan-agent","version":"0.1.0"}
+$ curl -s -X POST 'http://127.0.0.1:8080/inspect/scene/2002?hard=true' -o /tmp/panelscan_2002.json
+$ .venv/bin/python docs/show_trace.py /tmp/panelscan_2002.json
+scene 2002  hard=True
+ground truth : ['scratch', 'missing_screw', 'misaligned_label']
+trace:
+  step 1  raise_exposure  luma   28.5  sharp  176.2  markers 1  | mean luma 29 < 34
+  step 2  accept          luma   36.7  sharp  187.5  markers 4  | registration stable, sharpness and exposure acceptable, all detections confident
+verdict      : misaligned_label 0.99, scratch 0.97, missing_screw 0.96
+total_ms     : 151.07
+
+### counters
+$ curl -s http://127.0.0.1:8080/metrics
+{"requests":8,"defects_total":20,"latency_ms_p50":139.3,"latency_ms_max":190.4}

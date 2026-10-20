@@ -1,0 +1,21 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# regenerable per-scene renders and video intermediates
+results/scenes/*.png
+docs/video_frames/build/
+
+# local server log from docs/record_terminal.sh
+docs/video_src/server.log
+
+.DS_Store
+
+# scratch probe renders
+docs/video_src/build/
+
+# Demo video is 17.9MB — hosted on YouTube (see README), not committed.
+docs/demo_video.mp4

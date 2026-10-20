@@ -1,0 +1,1 @@
+Four moves per pass, one bounded loop, one readable trace.

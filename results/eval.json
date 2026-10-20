@@ -1,0 +1,1522 @@
+{
+ "generated_at": "2026-10-20T10:51:28+0900",
+ "opencv": "5.0.0",
+ "normal": {
+  "mode": "agentic",
+  "scenes": 40,
+  "overall": {
+   "tp": 79,
+   "fp": 2,
+   "fn": 4,
+   "precision": 0.975,
+   "recall": 0.952,
+   "f1": 0.963
+  },
+  "per_type": {
+   "missing_screw": {
+    "tp": 23,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "scratch": {
+    "tp": 19,
+    "fp": 2,
+    "fn": 0,
+    "precision": 0.905,
+    "recall": 1.0,
+    "f1": 0.95
+   },
+   "blob": {
+    "tp": 13,
+    "fp": 0,
+    "fn": 4,
+    "precision": 1.0,
+    "recall": 0.765,
+    "f1": 0.867
+   },
+   "misaligned_label": {
+    "tp": 24,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "latency_ms": {
+   "p50": 67.5,
+   "p95": 135.2,
+   "mean": 79.9
+  },
+  "steps_mean": 1.32,
+  "failures": [
+   {
+    "seed": 1010,
+    "hard": false,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       278,
+       553
+      ],
+      "r": 19,
+      "bbox": [
+       259,
+       534,
+       38,
+       38
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       750,
+       600
+      ],
+      "bbox": [
+       723,
+       573,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.08 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       265,
+       533,
+       28,
+       7
+      ],
+      "confidence": 0.97,
+      "evidence": "aspect=4.0 area=133 peak=128.0"
+     },
+     {
+      "type": "missing_screw",
+      "bbox": [
+       728,
+       578,
+       44,
+       44
+      ],
+      "confidence": 0.8932618260383607,
+      "evidence": "ncc 0.21 < 0.55"
+     }
+    ],
+    "notes": [
+     "FN blob at (278,553) \u2014 predicted ['misaligned_label', 'scratch', 'missing_screw']",
+     "FP scratch bbox=[265, 533, 28, 7] conf=0.97 (aspect=4.0 area=133 peak=128.0)"
+    ],
+    "steps": 2
+   },
+   {
+    "seed": 1012,
+    "hard": false,
+    "gt": [
+     {
+      "type": "blob",
+      "center": [
+       483,
+       544
+      ],
+      "r": 20,
+      "bbox": [
+       463,
+       524,
+       40,
+       40
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       750,
+       200
+      ],
+      "bbox": [
+       723,
+       173,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.09 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       463,
+       523,
+       42,
+       17
+      ],
+      "confidence": 0.97,
+      "evidence": "aspect=2.5 area=522 peak=153.0"
+     },
+     {
+      "type": "missing_screw",
+      "bbox": [
+       728,
+       178,
+       44,
+       44
+      ],
+      "confidence": 0.9274011611938477,
+      "evidence": "ncc 0.17 < 0.55"
+     }
+    ],
+    "notes": [
+     "FN blob at (483,544) \u2014 predicted ['misaligned_label', 'scratch', 'missing_screw']",
+     "FP scratch bbox=[463, 523, 42, 17] conf=0.97 (aspect=2.5 area=522 peak=153.0)"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 1032,
+    "hard": false,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       272,
+       554
+      ],
+      "r": 17,
+      "bbox": [
+       255,
+       537,
+       34,
+       34
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.09 < 0.55"
+     }
+    ],
+    "notes": [
+     "FN blob at (272,554) \u2014 predicted ['misaligned_label']"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 1033,
+    "hard": false,
+    "gt": [
+     {
+      "type": "blob",
+      "center": [
+       513,
+       549
+      ],
+      "r": 13,
+      "bbox": [
+       500,
+       536,
+       26,
+       26
+      ]
+     },
+     {
+      "type": "scratch",
+      "p0": [
+       512,
+       261
+      ],
+      "p1": [
+       646,
+       265
+      ],
+      "bbox": [
+       512,
+       255,
+       134,
+       12
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "scratch",
+      "bbox": [
+       511,
+       259,
+       137,
+       10
+      ],
+      "confidence": 0.97,
+      "evidence": "aspect=13.7 area=740 peak=143.0"
+     }
+    ],
+    "notes": [
+     "FN blob at (513,549) \u2014 predicted ['scratch']"
+    ],
+    "steps": 1
+   }
+  ]
+ },
+ "hard_agentic": {
+  "mode": "agentic",
+  "scenes": 40,
+  "overall": {
+   "tp": 81,
+   "fp": 7,
+   "fn": 2,
+   "precision": 0.92,
+   "recall": 0.976,
+   "f1": 0.947
+  },
+  "per_type": {
+   "missing_screw": {
+    "tp": 19,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   },
+   "scratch": {
+    "tp": 19,
+    "fp": 7,
+    "fn": 0,
+    "precision": 0.731,
+    "recall": 1.0,
+    "f1": 0.844
+   },
+   "blob": {
+    "tp": 18,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1": 0.947
+   },
+   "misaligned_label": {
+    "tp": 25,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+   }
+  },
+  "latency_ms": {
+   "p50": 218.5,
+   "p95": 476.6,
+   "mean": 244.5
+  },
+  "steps_mean": 2.9,
+  "failures": [
+   {
+    "seed": 2007,
+    "hard": true,
+    "gt": [
+     {
+      "type": "missing_screw",
+      "center": [
+       500,
+       200
+      ],
+      "bbox": [
+       473,
+       173,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       335,
+       541
+      ],
+      "r": 18,
+      "bbox": [
+       317,
+       523,
+       36,
+       36
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "missing_screw",
+      "bbox": [
+       478,
+       178,
+       44,
+       44
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.02 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       314,
+       521,
+       42,
+       19
+      ],
+      "confidence": 0.97,
+      "evidence": "aspect=2.2 area=578 peak=135.0"
+     }
+    ],
+    "notes": [
+     "FN blob at (335,541) \u2014 predicted ['missing_screw', 'scratch']",
+     "FP scratch bbox=[314, 521, 42, 19] conf=0.97 (aspect=2.2 area=578 peak=135.0)"
+    ],
+    "steps": 4
+   },
+   {
+    "seed": 2016,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.07 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       401,
+       442,
+       63,
+       5
+      ],
+      "confidence": 0.8625,
+      "evidence": "aspect=12.6 area=133 peak=50.0"
+     }
+    ],
+    "notes": [
+     "FP scratch bbox=[401, 442, 63, 5] conf=0.86 (aspect=12.6 area=133 peak=50.0)"
+    ],
+    "steps": 2
+   },
+   {
+    "seed": 2023,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       500,
+       200
+      ],
+      "bbox": [
+       473,
+       173,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "missing_screw",
+      "bbox": [
+       478,
+       178,
+       44,
+       44
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.01 < 0.55"
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.06 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       742,
+       441,
+       93,
+       6
+      ],
+      "confidence": 0.875,
+      "evidence": "aspect=15.5 area=200 peak=52.0"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       486,
+       443,
+       63,
+       4
+      ],
+      "confidence": 0.8,
+      "evidence": "aspect=15.8 area=128 peak=40.0"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       419,
+       443,
+       61,
+       4
+      ],
+      "confidence": 0.8,
+      "evidence": "aspect=15.2 area=124 peak=40.0"
+     }
+    ],
+    "notes": [
+     "FP scratch bbox=[742, 441, 93, 6] conf=0.88 (aspect=15.5 area=200 peak=52.0)",
+     "FP scratch bbox=[486, 443, 63, 4] conf=0.80 (aspect=15.8 area=128 peak=40.0)",
+     "FP scratch bbox=[419, 443, 61, 4] conf=0.80 (aspect=15.2 area=124 peak=40.0)"
+    ],
+    "steps": 3
+   },
+   {
+    "seed": 2025,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       763,
+       542
+      ],
+      "r": 18,
+      "bbox": [
+       745,
+       524,
+       36,
+       36
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.07 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       743,
+       523,
+       41,
+       17
+      ],
+      "confidence": 0.97,
+      "evidence": "aspect=2.4 area=506 peak=118.0"
+     }
+    ],
+    "notes": [
+     "FN blob at (763,542) \u2014 predicted ['misaligned_label', 'scratch']",
+     "FP scratch bbox=[743, 523, 41, 17] conf=0.97 (aspect=2.4 area=506 peak=118.0)"
+    ],
+    "steps": 2
+   },
+   {
+    "seed": 2029,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.07 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       403,
+       443,
+       161,
+       4
+      ],
+      "confidence": 0.7937500000000001,
+      "evidence": "aspect=40.2 area=323 peak=39.0"
+     }
+    ],
+    "notes": [
+     "FP scratch bbox=[403, 443, 161, 4] conf=0.79 (aspect=40.2 area=323 peak=39.0)"
+    ],
+    "steps": 4
+   }
+  ]
+ },
+ "hard_baseline": {
+  "mode": "baseline",
+  "scenes": 40,
+  "overall": {
+   "tp": 41,
+   "fp": 1,
+   "fn": 42,
+   "precision": 0.976,
+   "recall": 0.494,
+   "f1": 0.656
+  },
+  "per_type": {
+   "missing_screw": {
+    "tp": 7,
+    "fp": 0,
+    "fn": 12,
+    "precision": 1.0,
+    "recall": 0.368,
+    "f1": 0.538
+   },
+   "scratch": {
+    "tp": 13,
+    "fp": 1,
+    "fn": 6,
+    "precision": 0.929,
+    "recall": 0.684,
+    "f1": 0.788
+   },
+   "blob": {
+    "tp": 9,
+    "fp": 0,
+    "fn": 11,
+    "precision": 1.0,
+    "recall": 0.45,
+    "f1": 0.621
+   },
+   "misaligned_label": {
+    "tp": 12,
+    "fp": 0,
+    "fn": 13,
+    "precision": 1.0,
+    "recall": 0.48,
+    "f1": 0.649
+   }
+  },
+  "latency_ms": {
+   "p50": 72.1,
+   "p95": 124.3,
+   "mean": 77.5
+  },
+  "steps_mean": 1.0,
+  "failures": [
+   {
+    "seed": 2002,
+    "hard": true,
+    "gt": [
+     {
+      "type": "scratch",
+      "p0": [
+       359,
+       264
+      ],
+      "p1": [
+       497,
+       267
+      ],
+      "bbox": [
+       359,
+       258,
+       138,
+       12
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       250,
+       200
+      ],
+      "bbox": [
+       223,
+       173,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN scratch at (428,264) \u2014 predicted nothing",
+     "FN missing_screw at (250,200) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2003,
+    "hard": true,
+    "gt": [
+     {
+      "type": "missing_screw",
+      "center": [
+       250,
+       600
+      ],
+      "bbox": [
+       223,
+       573,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       789,
+       500
+      ],
+      "r": 20,
+      "bbox": [
+       769,
+       480,
+       40,
+       40
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN missing_screw at (250,600) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing",
+     "FN blob at (789,500) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2004,
+    "hard": true,
+    "gt": [
+     {
+      "type": "scratch",
+      "p0": [
+       681,
+       294
+      ],
+      "p1": [
+       826,
+       294
+      ],
+      "bbox": [
+       681,
+       288,
+       145,
+       12
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       211,
+       483
+      ],
+      "r": 14,
+      "bbox": [
+       197,
+       469,
+       28,
+       28
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN scratch at (754,294) \u2014 predicted nothing",
+     "FN blob at (211,483) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2005,
+    "hard": true,
+    "gt": [
+     {
+      "type": "blob",
+      "center": [
+       532,
+       516
+      ],
+      "r": 20,
+      "bbox": [
+       512,
+       496,
+       40,
+       40
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN blob at (532,516) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2006,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2007,
+    "hard": true,
+    "gt": [
+     {
+      "type": "missing_screw",
+      "center": [
+       500,
+       200
+      ],
+      "bbox": [
+       473,
+       173,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       335,
+       541
+      ],
+      "r": 18,
+      "bbox": [
+       317,
+       523,
+       36,
+       36
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN missing_screw at (500,200) \u2014 predicted nothing",
+     "FN blob at (335,541) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2010,
+    "hard": true,
+    "gt": [
+     {
+      "type": "blob",
+      "center": [
+       744,
+       498
+      ],
+      "r": 16,
+      "bbox": [
+       728,
+       482,
+       32,
+       32
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       750,
+       600
+      ],
+      "bbox": [
+       723,
+       573,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN blob at (744,498) \u2014 predicted nothing",
+     "FN missing_screw at (750,600) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2011,
+    "hard": true,
+    "gt": [
+     {
+      "type": "scratch",
+      "p0": [
+       627,
+       269
+      ],
+      "p1": [
+       746,
+       271
+      ],
+      "bbox": [
+       627,
+       263,
+       119,
+       12
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       603,
+       508
+      ],
+      "r": 16,
+      "bbox": [
+       587,
+       492,
+       32,
+       32
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN scratch at (686,269) \u2014 predicted nothing",
+     "FN blob at (603,508) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2015,
+    "hard": true,
+    "gt": [
+     {
+      "type": "missing_screw",
+      "center": [
+       750,
+       600
+      ],
+      "bbox": [
+       723,
+       573,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       771,
+       512
+      ],
+      "r": 14,
+      "bbox": [
+       757,
+       498,
+       28,
+       28
+      ]
+     },
+     {
+      "type": "scratch",
+      "p0": [
+       230,
+       262
+      ],
+      "p1": [
+       327,
+       264
+      ],
+      "bbox": [
+       230,
+       256,
+       97,
+       12
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN missing_screw at (750,600) \u2014 predicted nothing",
+     "FN blob at (771,512) \u2014 predicted nothing",
+     "FN scratch at (278,262) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2017,
+    "hard": true,
+    "gt": [
+     {
+      "type": "blob",
+      "center": [
+       420,
+       541
+      ],
+      "r": 19,
+      "bbox": [
+       401,
+       522,
+       38,
+       38
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       750,
+       200
+      ],
+      "bbox": [
+       723,
+       173,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN blob at (420,541) \u2014 predicted nothing",
+     "FN missing_screw at (750,200) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2022,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       753,
+       484
+      ],
+      "r": 13,
+      "bbox": [
+       740,
+       471,
+       26,
+       26
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       250,
+       600
+      ],
+      "bbox": [
+       223,
+       573,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN misaligned_label at (270,390) \u2014 predicted nothing",
+     "FN blob at (753,484) \u2014 predicted nothing",
+     "FN missing_screw at (250,600) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2025,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       763,
+       542
+      ],
+      "r": 18,
+      "bbox": [
+       745,
+       524,
+       36,
+       36
+      ]
+     }
+    ],
+    "pred": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ],
+      "confidence": 0.99,
+      "evidence": "ncc 0.07 < 0.55"
+     },
+     {
+      "type": "scratch",
+      "bbox": [
+       743,
+       523,
+       41,
+       17
+      ],
+      "confidence": 0.97,
+      "evidence": "aspect=2.4 area=506 peak=118.0"
+     }
+    ],
+    "notes": [
+     "FN blob at (763,542) \u2014 predicted ['misaligned_label', 'scratch']",
+     "FP scratch bbox=[743, 523, 41, 17] conf=0.97 (aspect=2.4 area=506 peak=118.0)"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2027,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       500,
+       200
+      ],
+      "bbox": [
+       473,
+       173,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN misaligned_label at (270,390) \u2014 predicted nothing",
+     "FN missing_screw at (500,200) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2029,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2033,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "blob",
+      "center": [
+       545,
+       525
+      ],
+      "r": 14,
+      "bbox": [
+       531,
+       511,
+       28,
+       28
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       750,
+       600
+      ],
+      "bbox": [
+       723,
+       573,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN misaligned_label at (270,390) \u2014 predicted nothing",
+     "FN blob at (545,525) \u2014 predicted nothing",
+     "FN missing_screw at (750,600) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2035,
+    "hard": true,
+    "gt": [
+     {
+      "type": "missing_screw",
+      "center": [
+       500,
+       200
+      ],
+      "bbox": [
+       473,
+       173,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN missing_screw at (500,200) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2036,
+    "hard": true,
+    "gt": [
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2038,
+    "hard": true,
+    "gt": [
+     {
+      "type": "missing_screw",
+      "center": [
+       250,
+       200
+      ],
+      "bbox": [
+       223,
+       173,
+       54,
+       54
+      ]
+     },
+     {
+      "type": "scratch",
+      "p0": [
+       209,
+       314
+      ],
+      "p1": [
+       369,
+       308
+      ],
+      "bbox": [
+       209,
+       308,
+       160,
+       12
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN missing_screw at (250,200) \u2014 predicted nothing",
+     "FN scratch at (289,314) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   },
+   {
+    "seed": 2039,
+    "hard": true,
+    "gt": [
+     {
+      "type": "scratch",
+      "p0": [
+       399,
+       303
+      ],
+      "p1": [
+       533,
+       299
+      ],
+      "bbox": [
+       399,
+       297,
+       134,
+       12
+      ]
+     },
+     {
+      "type": "misaligned_label",
+      "bbox": [
+       150,
+       350,
+       240,
+       80
+      ]
+     },
+     {
+      "type": "missing_screw",
+      "center": [
+       250,
+       200
+      ],
+      "bbox": [
+       223,
+       173,
+       54,
+       54
+      ]
+     }
+    ],
+    "pred": [],
+    "notes": [
+     "FN scratch at (466,303) \u2014 predicted nothing",
+     "FN misaligned_label at (270,390) \u2014 predicted nothing",
+     "FN missing_screw at (250,200) \u2014 predicted nothing"
+    ],
+    "steps": 1
+   }
+  ]
+ },
+ "total_runtime_s": 39.31
+}

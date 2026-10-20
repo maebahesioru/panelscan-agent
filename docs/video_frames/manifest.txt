@@ -1,0 +1,10 @@
+s01_title|10|0|docs/video_frames/telops/s01_title.txt
+s02_problem|24|1|docs/video_frames/telops/s02_problem.txt
+s03_terminal_1|26|0|docs/video_frames/telops/s03_terminal_1.txt
+s04_results|34|0|docs/video_frames/telops/s04_results.txt
+s05_perception|34|1|docs/video_frames/telops/s05_perception.txt
+s06_terminal_2|30|0|docs/video_frames/telops/s06_terminal_2.txt
+s07_architecture|40|0|docs/video_frames/telops/s07_architecture.txt
+s08_aws|24|0|docs/video_frames/telops/s08_aws.txt
+s09_scope|24|0|docs/video_frames/telops/s09_scope.txt
+s10_end|14|0|docs/video_frames/telops/s10_end.txt

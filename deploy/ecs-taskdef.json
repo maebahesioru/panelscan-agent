@@ -1,0 +1,42 @@
+{
+  "family": "panelscan-agent",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "runtimePlatform": {
+    "cpuArchitecture": "ARM64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/panelscanTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "panelscan-agent",
+      "image": "ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/panelscan-agent:TAG",
+      "essential": true,
+      "portMappings": [{ "containerPort": 8080, "protocol": "tcp" }],
+      "environment": [
+        { "name": "OMP_NUM_THREADS", "value": "2" },
+        { "name": "OPENCV_OPENCL_RUNTIME", "value": "disabled" }
+      ],
+      "healthCheck": {
+        "command": ["CMD-SHELL", "python -c \"import urllib.request;urllib.request.urlopen('http://127.0.0.1:8080/healthz',timeout=2)\" || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 15
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/panelscan-agent",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "readonlyRootFilesystem": true,
+      "user": "10001"
+    }
+  ]
+}

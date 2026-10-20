@@ -1,0 +1,1 @@
+Every number in this video comes from these commands, on CPU.
